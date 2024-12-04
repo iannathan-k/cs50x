@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ask Me Anything Result
+{% endblock %}
+
+{% block main %}
+
+<div class="container-fluid">
+
+  Your question was:
+  <p><span id="ama_question">{{question}}</span></p>
+
+  <p><br><br>The AI-based answer is as follow</p>
+
+  <span id="ama_answer">
+  {% autoescape false %}
+  {{answer}}
+  {% endautoescape %}
+  </span>
+
+  <p><br><a href="/ama" class="btn btn-primary">Try another question..</a>
+
+
+</div>
+
+{% endblock %}
+

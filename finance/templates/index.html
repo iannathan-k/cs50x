@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-sm fw-bold text-start">Symbol</div>
+    <div class="col-sm fw-bold text-end">Shares</div>
+    <div class="col-sm fw-bold text-end"><p class="font-weight-bold">Price</p></div>
+    <div class="col-sm fw-bold text-end">Total</div>
+  </div>
+
+  {% for key, value in values.items() %}
+
+    <div class="row row-striped align-items-center">
+        <div class="col-md text-start">{{key}}</div>
+        <div class="col-sm text-end">{{value[0]}}</div>
+        <div class="col-sm text-end">{{value[1] | usd}}</div>
+        <div class="col-sm text-end">{{value[2] | usd}}</div>
+    </div>
+  {% endfor %}
+
+  <div class="row align-items-center">
+    <div class="col-sm"></div>
+    <div class="col-sm"></div>
+    <div class="col-sm text-end fw-bold">Cash</div>
+    <div class="col-sm text-end">{{cash | usd}}</div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-sm"></div>
+    <div class="col-sm"></div>
+    <div class="col-sm text-end fw-bold">TOTAL</div>
+    <div class="col-sm text-end">{{total | usd}}</div>
+  </div>
+</div>
+
+
+{% endblock %}
+

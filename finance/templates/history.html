@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-sm fw-bold text-start">Transaction Time</div>
+    <div class="col-sm fw-bold text-start">Type</div>
+    <div class="col-sm fw-bold text-end">Symbol</div>
+    <div class="col-sm fw-bold text-end">Shares</div>
+    <div class="col-sm fw-bold text-end">Price</div>
+    <div class="col-sm fw-bold text-end">Market Value</div>
+  </div>
+
+  {% for val in data %}
+
+    <div class="row row-striped align-items-center">
+        <div class="col-md text-start">{{val[0]}}</div>
+        <div class="col-md text-start">{{val[1]}}</div>
+        <div class="col-md text-end">{{val[2]}}</div>
+        <div class="col-md text-end">{{val[3]}}</div>
+        <div class="col-md text-end">{{val[4] | usd}}</div>
+        <div class="col-md text-end">{{val[5] | usd}}</div>
+    </div>
+  {% endfor %}
+
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+Hello GenAI
+
+<div class="container-fluid">
+    <div class="row text-start align-items-center">
+        <div class="col-md-8 fw-bold">Questions</div>
+        <div class="col-md fw-bold">Answers</div>
+  </div>
+
+  {% autoescape false %}
+
+  {% for qqaa in qqaas %}
+
+    <div class="row row-striped text-start align-items-center">
+        <div class="col-md-8 content-1">{{qqaa[0]}}</div>
+
+        <div class="col-md-2">
+           <button id="button{{loop.index}}" onclick="revealAnswer('{{loop.index}}');" class="btn btn-primary">Reveal..</button>
+           <span id="answer{{loop.index}}" class="d-none">{{qqaa[1]}}</span>
+        </div>
+
+        <div class="col-md-2">
+             <button id="yes{{loop.index}}" onclick="grading( {{batchid}}, '{{loop.index}}', 1);" class="btn btn-success disabled">Yes</button>
+             <button id="no{{loop.index}}" onclick="grading( {{batchid}}, '{{loop.index}}', 0);" class=" btn btn-danger disabled">No</button>
+             <span id="result{{loop.index}}" class="d-none"></span>
+        </div>
+    </div>
+
+  {% endfor %}
+  {% endautoescape %}
+
+  <p><br><br><a href="/trivia">Get next set of questions..</a></p>
+
+</div>
+
+{% endblock %}
+

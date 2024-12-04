@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function resetButtons() {
+                const classesToReset = [".correct", ".incorrect"];
+                for (let cc of classesToReset.values()) {
+                    let elements = document.querySelectorAll(cc);
+                    for (let ii=0; ii < elements.length; ii++) {
+                        elements[ii].style.backgroundColor = '';
+                    }
+                }
+            };
+
+            // wait for DOM content to load
+            document.addEventListener('DOMContentLoaded', function() {
+                let allCorrects = document.querySelectorAll('.correct');
+                for (let ii=0; ii < allCorrects.length; ii++) {
+                    allCorrects[ii].addEventListener('click', function() {
+                        resetButtons();
+                        allCorrects[ii].style.backgroundColor = 'green';
+                        allCorrects[ii].parentElement.querySelector('.feedback').innerHTML='Correct!';
+                        allIncorrects[ii].parentElement.querySelector('.feedback').style.color = 'Green';
+                    });
+                }
+
+                let allIncorrects = document.querySelectorAll('.incorrect');
+                for (let ii=0; ii < allIncorrects.length; ii++) {
+                    allIncorrects[ii].addEventListener('click', function() {
+                        resetButtons();
+                        allIncorrects[ii].style.backgroundColor = 'Red';
+                        allIncorrects[ii].parentElement.querySelector('.feedback').innerHTML='Incorrect!';
+                        allIncorrects[ii].parentElement.querySelector('.feedback').style.color = 'Red';
+                    });
+                }
+
+                confirmButton = document.querySelector('#confirm2');
+                confirmButton.addEventListener('click', function() {
+                    inputField = confirmButton.parentElement.querySelector('#input2');
+                    feedbackText = confirmButton.parentElement.querySelector('.feedback2');
+                    if (inputField.value == '')
+                      return;
+                    if (inputField.value.trim().toLowerCase() == 'japan') {
+                      inputField.style.color = 'Green';
+                      feedbackText.innerHTML = 'Correct';
+                   } else {
+                      inputField.style.color = 'Red';
+                      feedbackText.innerHTML = 'Incorrect';
+                   }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the approximate ratio of people to sheep in NZ?</h3>
+                <button class="incorrect">6 people per 1 sheep</button>
+                <button class="incorrect">3 people per 1 sheep</button>
+                <button class="correct">1 people per 1 sheep</button>
+                <button class="incorrect">1 people per 3 sheeps</button>
+                <button class="incorrect">3 people per 6 sheeps</button>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+                <input id="input2"></input>
+                <button id="confirm2">Confirm</button>
+                <p class="feedback2"></p>
+            </div>
+        </div>
+    </body>
+</html>

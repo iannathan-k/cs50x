@@ -1,0 +1,6 @@
+The audio aura may be the average of danceabiilty, energy and valence which is then referenced against a list to find the the overall audio aura based on what range it falls into.
+Firstly, it won't be representative because it is a list from 2018, and the feature exists in 2021 which means that it is already 3 years outdated and the listenr may have changed in terms of music taste by this time.
+Secondly, it takes the average of all three which may have different weights to each of them which causes deviation from an accurate average.
+Thirdly, also because it doesn't account for the different feel attatched to each field which means that an average loses the dynamic of being able to tell three different aspects apart which doesn't properly make a represtation.
+Lastly also because the number attatched to each field is trying to attach an objective measure onto a subjective variable which is different for everyone and individually determined by each person.
+Better ways to calculate might include accounting for the different weights for each variable, or finding combindations of certain ranges of the fields which more accurately represents a certain mood to get the audio aura.

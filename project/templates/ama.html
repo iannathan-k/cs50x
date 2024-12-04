@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ask Me Anything
+{% endblock %}
+
+{% block main %}
+
+<div class="container-fluid">
+    Here you can ask anything to <span class="red">CS</span><span class="green">50</span> AI bot.
+    <br>Do feel free to be as creative as you'd like to in your question.
+
+    <p></p>
+    <form action="/ama" method="POST">
+      <textarea name="question" cols=60 rows=5 placeholder="Type in your question.."></textarea>
+      <p><button type="submit" class="btn btn-primary">Submit</button></p>
+    </form>
+    <br>
+</div>
+
+<div class="container">
+  <hr>
+  <br>
+  <p><a href="/ama">Most Recent</a> |
+    <a href="/ama?type=frequent">Most Frequent</a>
+  </p>
+  <br>
+  <p class="title">Last 5 Questions</p>
+  {% for qq in questions %}
+    <div class="row row-striped align-items-center">
+        <div class="col-md-2 text-end">{{loop.index}}. </div>
+        <div class="col-md-6 text-start">{{qq[1]}}</div>
+        <!-- <div class="col-md-2"><button class="btn btn-dark" onclick="ama( '{{qq[0]}}' );">ask</button></div> -->
+        <div class="col-md-2"><a href="ama?questionid={{qq[0]}}" class="btn-sm btn btn-dark" style="margin: 5px">ask</a></div>
+    </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
+

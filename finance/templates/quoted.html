@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+{{symbol}} stock is currently at {{price | usd}}
+
+<p><br><a href="/quote">Quote again</a>
+
+
+{% endblock %}

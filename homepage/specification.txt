@@ -1,0 +1,19 @@
+<div>
+<br>
+<p>
+<a>
+<h3>
+<button>
+<input>
+<span>
+<ol>
+<li>
+
+color
+font-style
+font-size
+padding-left
+line-height
+
+I used bootstrap "container-md" class to style all pages uniformedly
+and Javascript to perform calculations upon inputs from users.

@@ -1,0 +1,17 @@
+sort1 uses: Bubble sort
+
+How do you know?: it works fast on sorted-list, but slow (N^2) on
+random and reversed lists.
+
+sort2 uses: Merge sort
+
+How do you know?: the algorithm is much faster than sort3 and it's
+always fast regardless the list is already sorted or not. The fast
+algorithm is likely due to the O(n log n) algorithm.
+
+sort3 uses: Selection sort
+
+How do you know?: the algorithm is much slower than sort2 and it's
+always that slow regardless the list is already sorted or not. The
+slow algorithm is likely due to the O(n^2) algorithm in the worst
+and average cases.
